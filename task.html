@@ -1,0 +1,86 @@
+<html>
+<head>
+   <title>Shopping Website</title>
+   <link rel="stylesheet" href="task.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+<script>
+   var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+  </script>
+  <script>
+    $(document).ready(function(){
+      $("h3").hover(function(){
+        $("h3").animate({"font-size":"toggle"},"slow");
+      });
+
+    });
+  </script>
+<meta charset="utf-8">
+<meta name="author" content="Aditi Gurav">
+</head>
+<body>
+   <header>
+     <div class="main">
+         <div class="logo">
+           <img src="kid.PNG" style="width:82px";height:82px;">
+     </div>
+     
+         <ul>
+            <li class="active"><a href=" ">Home</a></li>
+            <li><a href="sign_in.html">Signin</a></li>
+            <li><a href="men.html">Men</a></li>
+            <li><a href="womens.html">Women</a></li>
+            <li><a href="kids.html">Kids</a></li>
+         </ul>
+     </div>
+     <div class="slideshow-container">
+<div class="mySlides" id="sl" >
+            <h3>WELCOME YOU ALL....<br> Have A Great Time Shopping Here.</h3>
+            </div>
+            <div class="mySlides">
+            <h3>An Exciting Place For The Whole Family To Shop</h3>
+         </div>
+        <div class="mySlides">
+            <h3>Here To Make Your Life Easy</h3>
+          </div>
+          <a class="prev" onclick="plusSlides(-1)"><</a>
+          <a class="next" onclick="plusSlides(1)">></a>
+          <div class="dot-container">
+            <span class="dot" onclick="currentSlide(1)"></span> 
+            <span class="dot" onclick="currentSlide(2)"></span> 
+            <span class="dot" onclick="currentSlide(3)"></span> 
+          </div>
+          </div>
+     
+     
+     <div class="offers">
+      <h2>Offers<br>20% off on kids wears<br>50% on ladies jeans<br>The offer is limited up to 15 days<h2></div>
+   </header>
+</body>
+</html>
